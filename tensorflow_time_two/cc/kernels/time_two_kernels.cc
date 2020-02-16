@@ -26,6 +26,7 @@ typedef Eigen::ThreadPoolDevice CPUDevice;
 typedef Eigen::GpuDevice GPUDevice;
 
 namespace functor {
+
 // CPU specialization of actual computation.
 template <typename T>
 struct TimeTwoFunctor<CPUDevice, T> {
