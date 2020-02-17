@@ -28,7 +28,7 @@ struct MaximumFilterFunctor<CPUDevice, T> {
       for (int x=0; x<input_shape; ++x) {
         for (int y=0; y<input_shape; ++y) {
           int input_idx = n*pow(input_shape, 2) + x*input_shape + y;
-          int tmp = input_tensor[input_idx];
+          T tmp = input_tensor[input_idx];
           for (int f_x=-footprint_shape/2; f_x<=footprint_shape/2; ++f_x) {
             int cur_x = x + f_x;
             if (cur_x<0 || cur_x>=input_shape) continue;

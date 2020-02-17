@@ -25,7 +25,7 @@ __global__ void MaximumFilterCudaKernel(const T* input_tensor, const int* footpr
   // thread vaildate
   if (thr_x<input_shape && thr_y<input_shape && thr_z<batch_size) {
     int input_idx = pow(input_shape, 2) * thr_z + input_shape * thr_x + thr_y;
-    int tmp = input_tensor[input_idx];
+    T tmp = input_tensor[input_idx];
     // loop footprint position
     for (int f_x=-footprint_shape/2; f_x<=footprint_shape/2; ++f_x) {
       int cur_x = thr_x + f_x;

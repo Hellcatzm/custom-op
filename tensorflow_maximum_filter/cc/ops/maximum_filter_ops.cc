@@ -5,7 +5,7 @@
 using namespace tensorflow;
 
 REGISTER_OP("MaximumFilter")
-    .Attr("T: {int32, float}")
+    .Attr("T: {float, int32}")
     .Input("input_tensor: T")
     .Input("footprint: int32")
     .Output("output_tensor: T")
